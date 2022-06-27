@@ -14,7 +14,7 @@ const sequelize = new Sequelize (CONNECTION_STRING, {
 module.exports = {
     getCountries: (req, res) => {
         sequelize.query(`
-            SELECT name FROM countries;
+            SELECT * FROM countries;
         `)
         .then(dbRes =>
             res.status(200).send(dbRes[0])
